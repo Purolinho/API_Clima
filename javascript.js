@@ -13,15 +13,22 @@ var botao = document.getElementById("botao").addEventListener("click", () => {
     .then(data => {
         console.log(data);
         const país = data.location
-        info = document.getElementById("info").style.width = "50%"
+        const clima = data.current
+            info = document.getElementById("info").style.transition = "0.4s"
+            info = document.getElementById("info").style.opacity = "1"
+            info = document.getElementById("info").style.width = "20%"
+            info = document.getElementById("info").style.transition = "1s"
         
         setTimeout(() => {
         }, 1000);       
+        info_completa = document.getElementById("info_completa").style.display = "flex"
         info_completa = document.getElementById("info_completa").style.opacity = "1"
-        info_completa = document.getElementById("info_completa").innerHTML = "País: " + país.country + "<br>" + "Capital: " + país.name + "<br>" + "Região: " + país.region + "<br>"
+        info_completa = document.getElementById("info_completa").innerHTML = "<ul>" + "País: " + país.country + "<br>" + "Capital: " + país.name + "<br>" + "Região: " + país.region + "<br>" + "Horário atual: " + (país.localtime).slice(10) + "<br>" + "Clima: " + clima.condition.text + "</ul>" + '<img src='+clima.condition.icon+' >'
     })
     .catch(error => {
         alert('Não foi possível achar o país escolhido');
         console.log(error)
     });
 })
+
+

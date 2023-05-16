@@ -15,7 +15,7 @@ main {
     margin: 5% auto;
     text-align: center;
     font-size: x-large;
-    background-image: linear-gradient(45deg, black, orange);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.548), rgb(255, 166, 0) 50%, rgba(0, 0, 0, 0.418));
     height: 30vh;
     width: fit-content;
     border-radius: 20px;
@@ -54,15 +54,38 @@ main {
     margin: 1% auto;
     text-align: start;
     font-size: large;
-    background-image: linear-gradient(-45deg, rgba(255, 166, 0, 0.356), orange);
-    height: 10vh;
+    background-image: linear-gradient(45deg, rgba(255, 166, 0, 0.582), rgba(255, 166, 0, 0.788));
+    height: fit-content;
     border-radius: 20px;
     padding: 2% 1%;   
     transition: 1s;
     width: 10%;
+    opacity: 0;
 }
 
 #info_completa {
-    transition: 0.5s;
+    font-size: 17pt;
+    justify-content: space-between;
+    width: 100%;
     opacity: 0;
+    display: flex;
+    transition: 1.5s;
+    opacity: 0;
+}
+
+#pesquisar{
+    margin: auto;
+}
+
+img {
+    align-self: flex-end;
+    width: 100px;
+}
+
+@media only screen and (max-width: 700px) {
+    #info_completa {
+        flex-direction: column;
+    }
+
+
 }
